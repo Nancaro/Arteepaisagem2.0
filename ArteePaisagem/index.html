@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arte & Paisagem - Paisagismo e Jardinagem em São Luís, MA</title>
+    <meta name="description" content="Arte & Paisagem é uma empresa de paisagismo e jardinagem em São Luís, MA, especializada em projetos paisagísticos, consultoria e manutenção de jardins. Conectamos a natureza com as pessoas!">
+    <meta name="keywords" content="paisagismo, jardinagem, projetos paisagísticos, consultoria paisagística, manutenção de jardins, São Luís, lembrancinhas vivas"> 
+    <!-- Folha de estilo CSS -->
+    <link rel="stylesheet" href="styles.css">
+  
+</head>
+<body>
+    <section id="inicio">
+    <!-- Cabeçalho fixo com logo pendurado -->
+    <header class="nav-bar">
+        <!-- Contêiner para o logo pendurado -->
+        <div class="logo-container">
+            <img src="Imagen_de_WhatsApp_2023-08-27_a_las_20.49.29-removebg-preview-removebg-preview.png" alt="Logo da empresa" class="logo">
+        </div>
+        <!-- Navegação principal do site -->
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#catálogos">Catálogos</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="#depoimentos">Depoimentos</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="PerguntasFrequentes.html">Perguntas frequentes</a></li>
+            </ul>
+        </nav>
+    </header>
+</section>
+
+    <!-- Banner principal com imagem de fundo -->
+    <section class="banner">
+        <h1>Arte e Paisagem</h1>
+        <p>Projetos de paisagismo e manutenção de jardins.</p>
+        <button onclick="window.open('https://www.linktr.ee/arteepaisagem', '_blank');">Saiba Mais</button>
+    </section>
+
+    <!-- Seção de serviços oferecidos -->
+    <section id="servicos">
+        <h2>Nossos serviços</h2>
+        <div class="servico">
+            <h3>Projeto de Paisagismo</h3>
+            <img src="PC.png" alt="Projetos de paisagismo">
+            <p>Transformamos espaços com soluções criativas e sustentáveis.</p>
+        </div>
+        <div class="servico">
+            <h3>Consultoria</h3>
+            <img src="plant.png" alt="Consultoria">
+            <p>Oferecemos consultoria especializada para o desenvolvimento do seu projeto.</p>
+        </div>
+        <div class="servico">
+            <h3>Lembraçinhas</h3>
+            <img src="leaf.png" alt="Lembraçinhas">
+            <p>Eternize sua festa com uma lembrança exclusiva.</p>
+        </div>
+    </section>
+
+      <!-- Seção de catalogo com galeria de imagens -->
+      <section id="catálogos">
+        <h2>Nossos catálogos</h2>
+        <div class="galeria">
+            <h3>Catálogo de lembracinhas</h3>
+            <iframe src="https://drive.google.com/file/d/1ZtR2Brdq5WyMtLkATjJwa-Tf3qchh95w/preview" width="800" height="480" allow="autoplay"></iframe>
+        </div>
+        <div class="galeria">
+            <h3>Catálogo de centro de mesa</h3>
+            <iframe src="https://drive.google.com/file/d/1zS2y6X8SgkJAvKoVcIOuRsy9fb5qI6mI/preview" width="800" height="480" allow="autoplay"></iframe>
+        </div>
+    </section>
+    
+    
+
+    <!-- Seção de portfólio com galeria de imagens -->
+    <section id="portfolio">
+        <h2>Nosso portfólio</h2>
+        <div class="galeria">
+            <iframe src="https://drive.google.com/file/d/1FT0sDU48zTQvTebNvbiO7_A2IrXNSU4O/preview" width="1000" height="480" allow="autoplay"></iframe>
+        </div>
+    </section>
+
+    <!-- Seção de depoimentos de clientes -->
+    <section id="depoimentos">
+        <h2>Depoimentos</h2>
+        <div class="depoimento">
+    <div class="carousel-container">
+        <div class="carousel-slides">
+            <div class="carousel-slide">
+                <p class="testimonial">"Plantas super lindas e com preços muito em conta! Com  certeza irei voltar!"</p>
+                <p class="author">- Bruno Aguirre</p>
+            </div>
+            <div class="carousel-slide">
+                <p class="testimonial">"Gostaria de elogiar a empresa Arte e Paisagem, pela criatividade, profissionalismo,  fiquei muito feliz com as lembrancinhas para o meu aniversário...  fez toda diferença"</p>
+                <p class="author">- Christiane Moura</p>
+            </div>
+            <div class="carousel-slide">
+                <p class="testimonial">"Amei seu trabalho Deus lhe abençoe a cada dia mais"</p>
+                <p class="author">- Andreia Pimenta </p>
+            </div>
+            <div class="carousel-slide">
+                <p class="testimonial">"Muuuuita variedade de plantas! Me surpreendi! Conheci a empresa depois de ganhar uma lembrancinha, em um aniversário 😍 super recomendo!!!"</p>
+                <p class="author">- Natália Costa Sales </p>
+            </div>
+            <div class="carousel-slide">
+                <p class="testimonial">"Amei o atendimento, a minha encomenda (para o Chá de fraldas) e a paciência para atender as minhas expectativas.  Super indico."</p>
+                <p class="author">- Nathalia Cristina Macedo da Costa Pereira </p>
+            </div>
+        </div>
+
+        <!-- Botones para navegar -->
+        <button class="carousel-button prev" onclick="moveSlides(-1)">&#10094;</button>
+        <button class="carousel-button next" onclick="moveSlides(1)">&#10095;</button>
+
+        <!-- Puntos de navegación -->
+        <div class="dots">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+        </div>
+    </div>
+    </div>
+    </section>
+
+    <!-- Seção de contato com botão de ação -->
+    <section id="contato">
+        <h2>Fale Conosco</h2>
+        <p>Entre em contato para solicitar um orçamento ou tirar dúvidas.</p>
+        <button onclick="window.open('https://api.whatsapp.com/send?phone=5598991980030', '_blank');">Entre em contato</button>
+        <!-- Email de contacto -->
+    <div class="email-contact" style="margin-top: 20px;">
+        <h3>Email de Contato</h3>
+        <p>Se tiver alguma dúvida, escreva para: 
+            <a href="mailto:laissilva0491@outlook.com" style="color: #007bff; text-decoration: none;">
+                laissilva0491@outlook.com
+            </a>
+        </p>
+    </div>
+        
+    <section id="ubicacao-horarios">
+        <h2>Ubicação da loja</h2>
+        <div class="container">
+            <div class="mapa">
+                <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3986.0079270147608!2d-44.2549633!3d-2.5042665!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7f68dcaba3868f7%3A0xd695e3a5d015f076!2sArte%20e%20Paisagem!5e0!3m2!1ses-419!2sbr!4v1727215396679!5m2!1ses-419!2sbr" 
+                width="500" 
+                    height="400" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <div class="horarios">
+                <h3>Horário de funcionamento</h3>
+                <ul>
+                    <li>Segunda-feira: 9:00 AM - 5:00 PM</li>
+                    <li>Terça-feira: Cerrado</li>
+                    <li>Quarta-feira: 9:00 AM - 5:00 PM</li>
+                    <li>Quinta-feira: Cerrado</li>
+                    <li>Sexta-feira: 9:00 AM - 5:00 PM</li>
+                    <li>Sábado: Cerrado</li>
+                    <li>Domingo: Cerrado</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    </section>
+
+    <!-- Rodapé com informações legais e links -->
+    <footer>
+        <p>&copy; 2024 Arte e Paisagem. Todos os direitos reservados.</p>
+    </footer>
+  <!-- Vinculación del archivo JS -->
+  <script src="script.js"></script>
+</body>
+</html>
