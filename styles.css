@@ -565,7 +565,7 @@ p.author {
     justify-content: space-between; /* Espacio entre el logo y la navegación */
     align-items: center; /* Centrar verticalmente */
     padding: 10px; /* Espaciado alrededor */
-    background-color: #fff; /* Fondo blanco */
+    background-color: #4F7258; /* Fondo blanco */
     position: fixed; /* Fijo en la parte superior */
     width: 100%; /* Ancho completo */
     z-index: 1000; /* Asegurar que esté por encima de otros elementos */
@@ -669,5 +669,51 @@ nav ul li a {
     .mapa {
         margin-right: 0; /* Sin margen en la vista móvil */
         margin-bottom: 20px; /* Margen inferior para separación */
+    }
+}
+
+/* Estilo para el icono hamburguesa */
+.hamburger {
+    display: none; /* Ocultar por defecto */
+    font-size: 30px; /* Tamaño del icono */
+    cursor: pointer; /* Cambiar el cursor al pasar por encima */
+}
+
+/* Estilos de la barra de navegación */
+nav {
+    display: flex; /* Usar flexbox */
+    flex-direction: row; /* Alinear en fila */
+}
+
+/* Mostrar el icono hamburguesa en pantallas pequeñas */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Mostrar el icono hamburguesa */
+    }
+
+    nav {
+        flex-direction: column; /* Cambiar a columna en móviles */
+        width: 100%; /* Ancho completo */
+        background: white; /* Fondo blanco para el menú */
+        position: absolute; /* Posición absoluta para overlay */
+        top: 60px; /* Ajustar según la altura de la barra */
+        left: 0;
+        z-index: 1000; /* Asegurarse de que esté encima */
+        max-height: 0; /* Ocultar el menú por defecto */
+        overflow: hidden; /* Evitar que se muestre */
+        transition: max-height 0.3s ease; /* Animación para la expansión */
+    }
+
+    nav.open {
+        max-height: 300px; /* Ajusta esto según el número de elementos */
+    }
+
+    nav ul {
+        padding: 0; /* Sin padding */
+        margin: 0; /* Sin margen */
+    }
+
+    nav li {
+        list-style: none; /* Sin viñetas */
     }
 }
