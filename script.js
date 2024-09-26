@@ -72,3 +72,7 @@ function showSlides(n) {
     dots[slideIndex - 1].className += " active";
 }
 
+function toggleMenu() {
+    const navMenu = document.querySelector('nav ul');
+    navMenu.classList.toggle('show'); // Alternar la clase 'show'
+}

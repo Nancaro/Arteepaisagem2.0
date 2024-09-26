@@ -559,3 +559,115 @@ p.author {
     color: #666;
     margin-bottom: 8px;
 }
+/* Estilo general para la nav-bar */
+.nav-bar {
+    display: flex;
+    justify-content: space-between; /* Espacio entre el logo y la navegación */
+    align-items: center; /* Centrar verticalmente */
+    padding: 10px; /* Espaciado alrededor */
+    background-color: #fff; /* Fondo blanco */
+    position: fixed; /* Fijo en la parte superior */
+    width: 100%; /* Ancho completo */
+    z-index: 1000; /* Asegurar que esté por encima de otros elementos */
+}
+
+/* Logo */
+.logo {
+    max-width: 100%; /* Asegura que el logo no exceda el ancho */
+    height: auto; /* Mantiene la proporción */
+}
+
+/* Navegación */
+nav ul {
+    display: flex; /* Usar flexbox para la lista */
+    list-style: none; /* Sin viñetas */
+    margin: 0; /* Sin margen */
+    padding: 0; /* Sin padding */
+}
+
+/* Elementos de la lista */
+nav ul li {
+    margin: 0 15px; /* Espacio entre los elementos */
+}
+
+/* Enlaces */
+nav ul li a {
+    text-decoration: none; /* Sin subrayado */
+    color: #000; /* Color del texto */
+}
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+        align-items: center; /* Centrar los elementos */
+        display: none; /* Ocultar por defecto */
+    }
+
+    nav ul.show {
+        display: flex; /* Mostrar cuando se active */
+    }
+
+    .nav-bar {
+        flex-direction: column; /* Cambiar la dirección a columna */
+    }
+
+    .logo-container {
+        margin-bottom: 10px; /* Espacio entre el logo y la navegación */
+    }
+}
+
+/* Botón para abrir/cerrar menú en móviles */
+.menu-toggle {
+    display: none; /* Ocultar por defecto */
+}
+
+/* Mostrar el botón en pantallas pequeñas */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Mostrar el botón de menú */
+        cursor: pointer; /* Cambiar el cursor */
+    }
+}
+/* Estilo general para la sección */
+#ubicacao-horarios {
+    padding: 20px; /* Espacio alrededor de la sección */
+}
+
+/* Contenedor de mapa y horarios */
+.container {
+    display: flex; /* Usar flexbox */
+    flex-direction: row; /* Alinear en fila */
+    justify-content: space-between; /* Espacio entre elementos */
+    align-items: flex-start; /* Alinear al inicio */
+}
+
+/* Estilo del mapa */
+.mapa {
+    flex: 1; /* Ocupa el espacio disponible */
+    margin-right: 20px; /* Espacio entre el mapa y horarios */
+}
+
+/* Ajustar el iframe para que sea responsivo */
+.mapa iframe {
+    width: 100%; /* Ancho completo */
+    height: auto; /* Altura automática */
+}
+
+/* Estilo de horarios */
+.horarios {
+    flex: 1; /* Ocupa el espacio disponible */
+}
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+        align-items: center; /* Centrar los elementos */
+    }
+
+    .mapa {
+        margin-right: 0; /* Sin margen en la vista móvil */
+        margin-bottom: 20px; /* Margen inferior para separación */
+    }
+}
