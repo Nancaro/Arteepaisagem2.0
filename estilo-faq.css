@@ -1,149 +1,4 @@
-/* Ajustar el header */
-header {
-    background-color: #4F7258; /* Verde natural */
-    padding: 0; /* Evitar espacios internos */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
-.logo {
-    width: 150px;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-}
-
-nav ul li a:hover {
-    color: #ddd;
-}
-/* Responsividad para dispositivos móviles */
-@media (max-width: 768px) {
-    .banner h1 {
-        font-size: 2rem;
-    }
-
-    .banner p {
-        font-size: 1.2rem;
-    }
-
-    .galeria img {
-        width: 100%;
-        margin: 10px 0;
-    }
-}
-/* Logo colgado */
-.logo-container {
-    position: relative;
-    text-align: center;
-    margin-top: -30px; /* Ajuste del logo colgante */
-}
-
-.logo {
-        width: 130px;
-        height: auto;
-        display: block;
-        position: absolute;
-        top: -20px; /* Colgando del borde superior */
-        left: 70%; /* Ajustar según el diseño deseado */
-        transform: translateX(-30%);
-}
-
-.logo-container::before {
-    content: "";
-    position: absolute;
-    top: -20px; /* Ajustar para que las cuerdas salgan del techo del header */
-    left: 50%;
-    width: 2px; /* El grosor de la cuerda */
-    height: 20px; /* Largo de la cuerda */
-    background-color: #333; /* Color de la cuerda */
-    transform: translateX(-50%);
-}
-
-.logo-container::after {
-    content: "";
-    position: absolute;
-    top: -20px; /* Para ajustar las cuerdas */
-    left: calc(50% - 75px); /* Ajusta la posición horizontal para alinear con el logo */
-    right: calc(50% - 75px); /* Ajusta la posición horizontal */
-    height: 2px; /* Grosor de la cuerda */
-    background-color: #333; /* Color de la cuerda */
-}
-/* Barra de navegación fija y pequeña */
-.nav-bar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 60px; /* Altura más pequeña */
-    background-color: #4a6946; /* Color de fondo de la barra */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;    
-    z-index: 1000; /* Asegurar que la barra está encima del contenido */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    margin: 0; /* Eliminar cualquier margen */
-}
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-nav ul li {
-    margin-right: 25px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Estilos del logo colgado */
-.logo-container {
-    position: relative;
-    margin-top: -30px; /* Para que el logo "cuelgue" hacia abajo */
-}
-
-.logo {
-    width: 130px; /* Tamaño del logo */
-    height: auto;
-    display: block;
-    position: absolute;
-    top: -20px; /* Ajuste para colgar parte del logo fuera de la barra de navegación */
-    left: 90%;
-    transform: translateX(-15%);
-}
-
-.logo-container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 5 0%;
-    width: 2px;
-    height: 50px; /* Altura de la cuerda */
-    background-color: #33333300; /* Color de la cuerda */
-    transform: translateX(-50%);
-}
 /* Estilo general */
 body {
     font-family: Arial, sans-serif;
@@ -206,4 +61,997 @@ a:hover {
 strong {
     font-weight: bold;
     color: #4CAF50;
+}
+
+ /* Responsividad para dispositivos móviles */
+@media (max-width: 768px) {
+    .banner h1 {
+        font-size: 2rem;
+    }
+
+    .banner p {
+        font-size: 1.2rem;
+    }
+
+
+    nav ul {
+        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+        align-items: center; /* Centrar los elementos */
+        display: none; /* Ocultar por defecto */
+        background-color: #4F7258;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        display: block;
+        text-align: center;
+        padding: 0; /* Sin padding */
+        margin: 0; /* Sin margen */
+    }
+
+    nav ul.show {
+        display: flex; /* Mostrar cuando se active */
+    }
+
+    .nav-bar {
+        flex-direction: column; /* Cambiar la dirección a columna */
+    }
+
+    .logo-container {
+        margin-bottom: 10px; /* Espacio entre el logo y la navegación */
+    }
+
+    .menu-toggle {
+        display: block; /* Mostrar el botón de menú */
+        cursor: pointer; /* Cambiar el cursor */
+    }
+
+    .container {
+        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+        align-items: center; /* Centrar los elementos */
+        padding: 150px 20px 20px 20px; /* 50px de padding en la parte superior */
+    }
+
+
+    nav {
+        flex-direction: column; /* Cambiar a columna en móviles */
+        width: 100%; /* Ancho completo */
+        background: white; /* Fondo blanco para el menú */
+        position: absolute; /* Posición absoluta para overlay */
+        top: 60px; /* Ajustar según la altura de la barra */
+        left: 0;
+        z-index: 99; /* Asegurarse de que esté encima */
+        max-height: 0; /* Ocultar el menú por defecto */
+        transition: max-height 0.3s ease; /* Animación para la expansión */
+    }
+
+    nav.open {
+        max-height: 300px; /* Ajusta esto según el número de elementos */
+    }
+
+    nav li {
+        list-style: none; /* Sin viñetas */
+    }
+   
+    nav ul.active {
+        display: flex; /* Mostrar el menú cuando esté activo */
+    }
+    
+    .hamburger {
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+        color: white;
+        z-index: 99; /* Un valor alto para que esté por encima de otros elementos */
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        z-index: 99; 
+    }
+
+    .nav-bar ul {
+        display: none;
+        flex-direction: column; /* Muestra el menú en columna */
+        text-align: center;
+        z-index: 99; /* Un valor alto para que esté por encima de otros elementos */
+    }
+
+    .nav-bar.open ul {
+            display: flex; /* Muestra el menú cuando se presiona el ícono */
+            flex-direction: column;
+            z-index: 99; 
+        }
+
+    #navbar {
+            display: none; /* Esto podría estar ocultando el menú en pantallas más grandes */
+        }
+    
+    #navbar.open {
+            display: block; /* Mostrarlo cuando esté abierto en pantallas pequeñas */
+            z-index: 99; 
+        }
+
+    .navbar {
+            display: none;
+        }
+
+    .navbar.active {
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            z-index: 99; 
+    /* El color del fondo del menú en móvil */
+        }
+    .navbar a {
+            color: white;
+            display: block;
+            padding: 10px;
+            z-index: 99; 
+        }
+    
+}
+
+ /* NUEVO CODIGO */
+
+/* styles.css */
+.nav-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #4F7258;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin: 0;
+}
+
+.logo {
+    width: 150px;
+    z-index: 1000; 
+    
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    z-index: 99; 
+}
+
+nav ul li {
+    margin: 0 15px;
+    z-index: 99; 
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    z-index: 99; 
+}
+
+nav ul li a:hover {
+    color: #ddd;
+}
+
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    z-index: 99; 
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+    .nav-bar {
+        flex-direction: column;
+    }
+
+    .logo-container {
+        margin-bottom: 10px;
+        z-index: 1000; 
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        display: none;
+        background-color: #4F7258;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        display: block;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        z-index: 99; 
+    }
+
+    nav ul.show {
+        display: flex;
+        z-index: 99; 
+    }
+
+    .hamburger {
+        display: block;
+        z-index: 99; 
+    }
+}
+/* Ajustar tamaño de fuente para un mejor contorno */
+.header-text h1 {
+    font-size: 46px; /* Tamaño más grande para el título */
+}
+
+.header-text p {
+    font-size: 28px; /* Tamaño para el subtítulo */
+}
+
+.navbar a {
+    color: white; /* Esto hará que las letras sean blancas */
+    text-decoration: none;
+    padding: 10px;
+}
+
+
+.navbar {
+    position: absolute; /* O 'fixed' si deseas que siempre esté visible */
+    top: 0;
+    right: 0;
+    padding: 10px;
+    /* Ajusta esto según tu diseño */
+}
+/* Estilos para los enlaces del menú */
+#navbar ul li a {
+    text-decoration: none; /* Sin subrayado */
+    color: #ffffff; /* Color del texto */
+    padding: 10px; /* Espacio alrededor del texto */
+    display: block;
+}
+
+#navbar ul li a:hover {
+    background-color: #405d47; /* Color de fondo al pasar por encima */
+}
+
+#navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#navbar ul li {
+    border-bottom: 1px solid #ccc;
+    display: inline-block; /* Coloca los elementos del menú en línea */
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    margin-bottom: 5px;
+    transition: all 0.3s ease;
+}
+
+.hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+/* Diseño general para pantallas grandes */
+.nav-bar ul {
+    list-style: none;
+    display: flex; /* Muestra el menú en línea para pantallas grandes */
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-bar ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.nav-bar.open ul {
+    display: block; /* Muestra el menú cuando se activa el ícono hamburguesa */
+    text-align: center;
+}
+/* Estilos de la barra de navegación */
+nav {
+    display: flex; /* Usar flexbox */
+    flex-direction: row; /* Alinear en fila */
+}
+
+
+.navbar-toggler {
+    position: absolute;
+    top: 50px; /* Ajusta según sea necesario */
+    right: 10px; /* Ajusta según sea necesario */
+    z-index: 10; /* Asegúrate de que sea más alto que el resto de elementos */
+}
+
+/* Agregar estilos específicos para cuando se abre el menú */
+#navbar {
+    display: open; /* Oculta el menú por defecto */
+    display: none; /* Ocultar el menú por defecto */
+    position: absolute; /* Posición absoluta para overlay */
+    top: 60px; /* Ajustar según la altura de la barra */
+    z-index: 99; /* Asegurarse de que esté encima */
+    max-height: 0; /* Ocultar el menú por defecto */
+    transition: max-height 0.3s ease; /* Animación para la expansión */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 50px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: #4F7258; /* Estilo opcional para visibilidad */
+}
+
+#navbar.open {
+    display: block; /* Muestra el menú cuando se añade la clase 'open' */
+    max-height: 300px; /* Ajusta esto según el número de elementos */
+}
+
+
+/* Estilo para el icono hamburguesa */
+.hamburger {
+    display: none; /* Ocultar por defecto */
+    font-size: 30px; /* Tamaño del icono */
+    cursor: pointer; /* Cambiar el cursor al pasar por encima */
+    position: absolute;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: #4F7258;
+    border: none;
+    padding: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 98;
+}
+/* Botón para abrir/cerrar menú en móviles */
+.menu-toggle {
+    display: none; /* Ocultar por defecto */
+}
+/* Contenedor usando flexbox para alinear elementos */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    flex-direction: row; /* Alinear en fila */
+    justify-content: space-between; /* Espacio entre elementos */
+    align-items: flex-start; /* Alinear al inicio */
+    
+}
+
+/* Logo colgado */
+.logo-container {
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    margin-right: auto; /* Dejar espacio para el menú */
+    margin-top: 20px; /* Ajusta el margen superior según sea necesario */
+    z-index: 1000; /* Un valor alto para que esté por encima de otros elementos */
+    
+}
+
+.logo-container::before {
+    content: "";
+    position: absolute;
+    top: -20px; /* Ajustar para que las cuerdas salgan del techo del header */
+    left: 50%;
+    width: 2px; /* El grosor de la cuerda */
+    height: 20px; /* Largo de la cuerda */
+    transform: translateX(-50%);
+    top: 0;
+    left: 5 0%;
+    height: 50px; /* Altura de la cuerda */
+    background-color: #33333300; /* Color de la cuerda */
+    z-index: 100; /* Un valor alto para que esté por encima de otros elementos */
+}
+
+.logo-container::after {
+    content: "";
+    position: absolute;
+    top: -20px; /* Para ajustar las cuerdas */
+    left: calc(50% - 75px); /* Ajusta la posición horizontal para alinear con el logo */
+    right: calc(50% - 75px); /* Ajusta la posición horizontal */
+    height: 2px; /* Grosor de la cuerda */
+    background-color: #33333300; /* Color de la cuerda */
+    z-index: 100; /* Un valor alto para que esté por encima de otros elementos */
+}
+/* Barra de navegación fija y pequeña */
+.nav-bar {
+    top: 0;
+    height: 60px; /* Altura más pequeña */
+    background-color: #4F7258; /* Color de fondo de la barra */
+    display: flex;   
+    z-index: 99; /* Asegurar que la barra está encima del contenido */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin: 0; /* Eliminar cualquier margen */
+    justify-content: space-between; /* Espacio entre el logo y la navegación */
+    align-items: center; /* Centrar verticalmente */
+    padding: 10px; /* Espaciado alrededor */
+    position: fixed; /* Fijo en la parte superior */
+    width: 100%; /* Ancho completo */
+    padding: 20px;
+    color: white;
+    position: fixed;
+}
+
+/* Ajustar el header */
+header {
+    background-color: #4F7258; /* Verde natural */
+    padding: 0; /* Evitar espacios internos */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 130px; /* Tamaño del logo */
+    height: auto; /* Mantener la proporción */
+    top: -20px; /* Colgando del borde superior */
+    left: 70%; /* Ajustar según el diseño deseado */
+    transform: translateX(-30%);
+    display: block;
+    position: absolute;
+    left: 90%;
+    transform: translateX(-15%);
+    max-width: 100%; /* Asegura que el logo no exceda el ancho */
+    max-width: 150px; /* Ajusta el tamaño máximo del logo */
+    z-index: 1000; /* Asegúrate de que también se aplique al logo */
+}
+
+nav ul {
+    display: flex;/* Usar flexbox para la lista */
+    list-style: none; /* Sin viñetas */
+    margin: 0; /* Sin margen */
+    padding: 0; /* Sin padding */
+}
+
+nav ul li {
+    margin: 0 15px; /* Espacio entre los elementos */
+    margin-right: 20px;
+}
+
+nav ul li a {
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none; /* Sin subrayado */
+    color: #ffffff; /* Color del texto */
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ddd;
+    text-decoration: underline;
+}
+
+/* Resetear algunos estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Eliminar márgenes del body */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    color: #333;
+    padding: 5% 0 0 0; /* 50px de padding en la parte superior */
+}
+
+/* Resetear algunos estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Eliminar márgenes del body */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Ajustar el header */
+header {
+    background-color: #4F7258; /* Verde natural */
+    padding: 0; /* Evitar espacios internos */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 130px; /* Tamaño del logo */
+    height: auto; /* Mantener la proporción */
+    top: -20px; /* Colgando del borde superior */
+    left: 70%; /* Ajustar según el diseño deseado */
+    transform: translateX(-30%);
+    display: block;
+    position: absolute;
+    left: 90%;
+    transform: translateX(-15%);
+    max-width: 100%; /* Asegura que el logo no exceda el ancho */
+    max-width: 150px; /* Ajusta el tamaño máximo del logo */
+    z-index: 1000; /* Asegúrate de que también se aplique al logo */
+}
+
+nav ul {
+    display: flex;/* Usar flexbox para la lista */
+    list-style: none; /* Sin viñetas */
+    margin: 0; /* Sin margen */
+    padding: 0; /* Sin padding */
+}
+
+nav ul li {
+    margin: 0 15px; /* Espacio entre los elementos */
+    margin-right: 20px;
+}
+
+nav ul li a {
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none; /* Sin subrayado */
+    color: #ffffff; /* Color del texto */
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ddd;
+    text-decoration: underline;
+}
+
+
+/* Logo colgado */
+.logo-container {
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    margin-right: auto; /* Dejar espacio para el menú */
+    margin-top: 20px; /* Ajusta el margen superior según sea necesario */
+    z-index: 1000; /* Un valor alto para que esté por encima de otros elementos */
+    
+}
+
+.logo-container::before {
+    content: "";
+    position: absolute;
+    top: -20px; /* Ajustar para que las cuerdas salgan del techo del header */
+    left: 50%;
+    width: 2px; /* El grosor de la cuerda */
+    height: 20px; /* Largo de la cuerda */
+    transform: translateX(-50%);
+    top: 0;
+    left: 5 0%;
+    height: 50px; /* Altura de la cuerda */
+    background-color: #33333300; /* Color de la cuerda */
+    z-index: 100; /* Un valor alto para que esté por encima de otros elementos */
+}
+
+.logo-container::after {
+    content: "";
+    position: absolute;
+    top: -20px; /* Para ajustar las cuerdas */
+    left: calc(50% - 75px); /* Ajusta la posición horizontal para alinear con el logo */
+    right: calc(50% - 75px); /* Ajusta la posición horizontal */
+    height: 2px; /* Grosor de la cuerda */
+    background-color: #33333300; /* Color de la cuerda */
+    z-index: 100; /* Un valor alto para que esté por encima de otros elementos */
+}
+/* Barra de navegación fija y pequeña */
+.nav-bar {
+    top: 0;
+    height: 60px; /* Altura más pequeña */
+    background-color: #4F7258; /* Color de fondo de la barra */
+    display: flex;   
+    z-index: 99; /* Asegurar que la barra está encima del contenido */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin: 0; /* Eliminar cualquier margen */
+    justify-content: space-between; /* Espacio entre el logo y la navegación */
+    align-items: center; /* Centrar verticalmente */
+    padding: 10px; /* Espaciado alrededor */
+    position: fixed; /* Fijo en la parte superior */
+    width: 100%; /* Ancho completo */
+    padding: 20px;
+    color: white;
+    position: fixed;
+}
+
+/* Botón para abrir/cerrar menú en móviles */
+.menu-toggle {
+    display: none; /* Ocultar por defecto */
+}
+
+/* Estilo para el icono hamburguesa */
+.hamburger {
+    display: none; /* Ocultar por defecto */
+    font-size: 30px; /* Tamaño del icono */
+    cursor: pointer; /* Cambiar el cursor al pasar por encima */
+    position: absolute;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: #4F7258;
+    border: none;
+    padding: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 98;
+}
+
+/* Estilos de la barra de navegación */
+nav {
+    display: flex; /* Usar flexbox */
+    flex-direction: row; /* Alinear en fila */
+}
+
+
+.navbar-toggler {
+    position: absolute;
+    top: 50px; /* Ajusta según sea necesario */
+    right: 10px; /* Ajusta según sea necesario */
+    z-index: 10; /* Asegúrate de que sea más alto que el resto de elementos */
+}
+
+/* Agregar estilos específicos para cuando se abre el menú */
+#navbar {
+    display: open; /* Oculta el menú por defecto */
+    display: none; /* Ocultar el menú por defecto */
+    position: absolute; /* Posición absoluta para overlay */
+    top: 60px; /* Ajustar según la altura de la barra */
+    z-index: 99; /* Asegurarse de que esté encima */
+    max-height: 0; /* Ocultar el menú por defecto */
+    transition: max-height 0.3s ease; /* Animación para la expansión */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 50px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: #4F7258; /* Estilo opcional para visibilidad */
+}
+
+#navbar.open {
+    display: block; /* Muestra el menú cuando se añade la clase 'open' */
+    max-height: 300px; /* Ajusta esto según el número de elementos */
+}
+
+/* Diseño general para pantallas grandes */
+.nav-bar ul {
+    list-style: none;
+    display: flex; /* Muestra el menú en línea para pantallas grandes */
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-bar ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.nav-bar.open ul {
+    display: block; /* Muestra el menú cuando se activa el ícono hamburguesa */
+    text-align: center;
+}
+
+.email-contact { 
+    margin-top: 20px;
+}
+
+/* Estilos para los enlaces del menú */
+#navbar ul li a {
+    text-decoration: none; /* Sin subrayado */
+    color: #ffffff; /* Color del texto */
+    padding: 10px; /* Espacio alrededor del texto */
+    display: block;
+}
+
+#navbar ul li a:hover {
+    background-color: #405d47; /* Color de fondo al pasar por encima */
+}
+
+#navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#navbar ul li {
+    border-bottom: 1px solid #ccc;
+    display: inline-block; /* Coloca los elementos del menú en línea */
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    margin-bottom: 5px;
+    transition: all 0.3s ease;
+}
+
+.hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.navbar a {
+    color: white; /* Esto hará que las letras sean blancas */
+    text-decoration: none;
+    padding: 10px;
+}
+
+
+.navbar {
+    position: absolute; /* O 'fixed' si deseas que siempre esté visible */
+    top: 0;
+    right: 0;
+    padding: 10px;
+    /* Ajusta esto según tu diseño */
+}
+
+/* Responsividad para dispositivos móviles */
+@media (max-width: 768px) {
+    .banner h1 {
+        font-size: 2rem;
+    }
+
+    .banner p {
+        font-size: 1.2rem;
+    }
+
+    .galeria img {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .galeria iframe {
+        height: 360px; /* Ajusta la altura para pantallas más pequeñas */
+    }
+
+    nav ul {
+        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+        align-items: center; /* Centrar los elementos */
+        display: none; /* Ocultar por defecto */
+        background-color: #4F7258;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        display: block;
+        text-align: center;
+        padding: 0; /* Sin padding */
+        margin: 0; /* Sin margen */
+    }
+
+    nav ul.show {
+        display: flex; /* Mostrar cuando se active */
+    }
+
+    .nav-bar {
+        flex-direction: column; /* Cambiar la dirección a columna */
+    }
+
+    .logo-container {
+        margin-bottom: 10px; /* Espacio entre el logo y la navegación */
+    }
+
+    .menu-toggle {
+        display: block; /* Mostrar el botón de menú */
+        cursor: pointer; /* Cambiar el cursor */
+    }
+
+    .container {
+        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+        align-items: center; /* Centrar los elementos */
+    }
+
+    .mapa {
+        margin-right: 0; /* Sin margen en la vista móvil */
+        margin-bottom: 20px; /* Margen inferior para separación */
+    }
+
+    nav {
+        flex-direction: column; /* Cambiar a columna en móviles */
+        width: 100%; /* Ancho completo */
+        background: white; /* Fondo blanco para el menú */
+        position: absolute; /* Posición absoluta para overlay */
+        top: 60px; /* Ajustar según la altura de la barra */
+        left: 0;
+        z-index: 99; /* Asegurarse de que esté encima */
+        max-height: 0; /* Ocultar el menú por defecto */
+        transition: max-height 0.3s ease; /* Animación para la expansión */
+    }
+
+    nav.open {
+        max-height: 300px; /* Ajusta esto según el número de elementos */
+    }
+
+    nav li {
+        list-style: none; /* Sin viñetas */
+    }
+   
+    nav ul.active {
+        display: flex; /* Mostrar el menú cuando esté activo */
+    }
+    
+    .hamburger {
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+        color: white;
+        z-index: 99; /* Un valor alto para que esté por encima de otros elementos */
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        z-index: 99; 
+    }
+
+    .nav-bar ul {
+        display: none;
+        flex-direction: column; /* Muestra el menú en columna */
+        text-align: center;
+        z-index: 99; /* Un valor alto para que esté por encima de otros elementos */
+    }
+
+    .nav-bar.open ul {
+            display: flex; /* Muestra el menú cuando se presiona el ícono */
+            flex-direction: column;
+            z-index: 99; 
+        }
+
+    #navbar {
+            display: none; /* Esto podría estar ocultando el menú en pantallas más grandes */
+        }
+    
+    #navbar.open {
+            display: block; /* Mostrarlo cuando esté abierto en pantallas pequeñas */
+            z-index: 99; 
+        }
+
+    .navbar {
+            display: none;
+        }
+
+    .navbar.active {
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            z-index: 99; 
+    /* El color del fondo del menú en móvil */
+        }
+    .navbar a {
+            color: white;
+            display: block;
+            padding: 10px;
+            z-index: 99; 
+        }
+    
+}
+
+ /* NUEVO CODIGO */
+
+/* styles.css */
+.nav-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #4F7258;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin: 0;
+}
+
+.logo {
+    width: 150px;
+    z-index: 1000; 
+    
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    z-index: 99; 
+}
+
+nav ul li {
+    margin: 0 15px;
+    z-index: 99; 
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    z-index: 99; 
+}
+
+nav ul li a:hover {
+    color: #ddd;
+}
+
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    z-index: 99; 
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+    .nav-bar {
+        flex-direction: column;
+    }
+
+    .logo-container {
+        margin-bottom: 10px;
+        z-index: 1000; 
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        display: none;
+        background-color: #4F7258;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        display: block;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        z-index: 99; 
+    }
+
+    nav ul.show {
+        display: flex;
+        z-index: 99; 
+    }
+
+    .hamburger {
+        display: block;
+        z-index: 99; 
+    }
 }

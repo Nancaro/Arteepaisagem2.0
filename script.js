@@ -1,3 +1,4 @@
+// script.js
 let slideIndex = 0;
 showSlides(slideIndex);
 
@@ -9,10 +10,10 @@ setInterval(() => {
 
 // Función para mostrar los slides
 function showSlides(n) {
-    let i;
     const slides = document.getElementsByClassName("carousel-slide");
     const dots = document.getElementsByClassName("dot");
 
+    // Ajustar el índice del slide
     if (n >= slides.length) {
         slideIndex = 0;
     } 
@@ -21,18 +22,14 @@ function showSlides(n) {
     }
 
     // Ocultar todos los slides
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
+    Array.from(slides).forEach(slide => slide.style.display = "none");
 
     // Remover la clase "active" de todos los puntos
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
+    Array.from(dots).forEach(dot => dot.classList.remove("active"));
 
     // Mostrar el slide actual y añadir la clase "active" al punto correspondiente
     slides[slideIndex].style.display = "block";
-    dots[slideIndex].className += " active";
+    dots[slideIndex].classList.add("active");
 }
 
 // Función para cambiar los slides cuando se hace clic en las flechas
@@ -45,12 +42,29 @@ function currentSlide(n) {
     showSlides(slideIndex = n);
 }
 
-function toggleMenu() {
-    const navMenu = document.querySelector('nav ul');
-    navMenu.classList.toggle('show'); // Alternar la clase 'show'
-}
-
+// Función para mostrar/ocultar el menú hamburguesa
 function toggleMenu() {
     const navbar = document.getElementById('navbar');
-    navbar.classList.toggle('open'); // Alternar la clase 'open' en el navbar
+    const hamburger = document.getElementById('hamburger');
+    hamburger.classList.toggle('open');
+    navbar.classList.toggle('open');
 }
+
+// Agregar evento de clic al botón hamburguesa y a los enlaces del menú
+document.getElementById('hamburger').addEventListener('click', toggleMenu);
+
+document.querySelectorAll('#navbar ul li a').forEach(link => {
+    link.addEventListener('click', () => {
+        const navbar = document.getElementById('navbar');
+        navbar.classList.remove('open'); // Ocultar el menú después de hacer clic en un enlace
+    });
+});
+
+
+    // script.js
+const hamburger = document.getElementById('hamburger');
+const nav = document.querySelector('nav ul');
+
+hamburger.addEventListener('click', () => {
+    nav.classList.toggle('show');
+});
