@@ -1,30 +1,70 @@
-const slider = document.querySelector(".testimonial-slider");
-const testimonials = document.querySelectorAll(".testimonial");
-const prevButton = document.getElementById("prev");
-const nextButton = document.getElementById("next");
+// script.js
+let slideIndex = 0;
+showSlides(slideIndex);
 
-let currentIndex = 0;
+// Rotación automática cada 10 segundos
+setInterval(() => {
+    slideIndex++;
+    showSlides(slideIndex);
+}, 10000);
 
-function updateSlider() {
-    const offset = -(currentIndex * (testimonials[0].offsetWidth + 30)); // Incluye el margen derecho
-    slider.style.transform = `translateX(${offset}px)`;
+// Función para mostrar los slides
+function showSlides(n) {
+    const slides = document.getElementsByClassName("carousel-slide");
+    const dots = document.getElementsByClassName("dot");
+
+    // Ajustar el índice del slide
+    if (n >= slides.length) {
+        slideIndex = 0;
+    } 
+    if (n < 0) {
+        slideIndex = slides.length - 1;
+    }
+
+    // Ocultar todos los slides
+    Array.from(slides).forEach(slide => slide.style.display = "none");
+
+    // Remover la clase "active" de todos los puntos
+    Array.from(dots).forEach(dot => dot.classList.remove("active"));
+
+    // Mostrar el slide actual y añadir la clase "active" al punto correspondiente
+    slides[slideIndex].style.display = "block";
+    dots[slideIndex].classList.add("active");
 }
 
-prevButton.addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
-    updateSlider();
+// Función para cambiar los slides cuando se hace clic en las flechas
+function moveSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+// Función para ir a un slide específico
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+// Función para mostrar/ocultar el menú hamburguesa
+function toggleMenu() {
+    const navbar = document.getElementById('navbar');
+    const hamburger = document.getElementById('hamburger');
+    hamburger.classList.toggle('open');
+    navbar.classList.toggle('open');
+}
+
+// Agregar evento de clic al botón hamburguesa y a los enlaces del menú
+document.getElementById('hamburger').addEventListener('click', toggleMenu);
+
+document.querySelectorAll('#navbar ul li a').forEach(link => {
+    link.addEventListener('click', () => {
+        const navbar = document.getElementById('navbar');
+        navbar.classList.remove('open'); // Ocultar el menú después de hacer clic en un enlace
+    });
 });
 
-nextButton.addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % testimonials.length;
-    updateSlider();
+
+    // script.js
+const hamburger = document.getElementById('hamburger');
+const nav = document.querySelector('nav ul');
+
+hamburger.addEventListener('click', () => {
+    nav.classList.toggle('show');
 });
-
-// Actualizar el tamaño del slider cuando la ventana cambie de tamaño
-window.addEventListener("resize", updateSlider);
-
-// Automático: cambia de testimonio cada 3 segundos
-setInterval(() => {
-    currentIndex = (currentIndex + 1) % testimonials.length;
-    updateSlider();
-}, 3000);
