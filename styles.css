@@ -511,8 +511,8 @@ p.author {
 
 /* Ajustar el iframe para que sea responsivo */
 .mapa iframe {
-    width: 100%; /* Ancho completo */
-    height: auto; /* Altura automática */
+    width: 550px; /* Ancho completo */
+    height: 400px; /* Altura automática */
 }
 
 /* Estilo para el icono hamburguesa */
@@ -947,4 +947,42 @@ nav ul li a:hover {
         display: block;
         z-index: 99; 
     }
+}
+
+/* Estilos para la tira de logos empresariales */
+.empresa-logo-container {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    margin: 20px 0; /* Ajusta el margen según sea necesario */
+}
+
+#empresa-logo h2 {
+    font-size: 2.5rem; /* Tamaño de fuente */
+    color: #4F7258; /* Color verde natural */
+    margin-bottom: 40px; /* Espacio inferior */
+    text-align: center; /* Centrado */
+}
+
+.empresa-logo-track {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll 60s linear infinite;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+}
+
+.empresa-logo {
+    display: inline-block;
+    vertical-align: middle;
+    height: 50px; /* Ajusta la altura de los logos según sea necesario */
+    margin-right: 20px; /* Espacio entre los logos */
+}
+
+/* Estilo para el h2 de la sección de logos empresariales */
+.empresa-logo-container h2 {
+    color: #4F7258; /* Color verde natural */
 }
