@@ -511,7 +511,7 @@ p.author {
 
 /* Ajustar el iframe para que sea responsivo */
 .mapa iframe {
-    width: 360px; /* Ancho completo */
+    width: 400px; /* Ancho completo */
     height: 400px; /* Altura automática */
 }
 
