@@ -511,7 +511,7 @@ p.author {
 
 /* Ajustar el iframe para que sea responsivo */
 .mapa iframe {
-    width: 550px; /* Ancho completo */
+    width: 500px; /* Ancho completo */
     height: 400px; /* Altura automática */
 }
 
@@ -985,4 +985,20 @@ nav ul li a:hover {
 /* Estilo para el h2 de la sección de logos empresariales */
 .empresa-logo-container h2 {
     color: #4F7258; /* Color verde natural */
+}
+
+/* Estilos para las redes socias */
+.redes-socias-container {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    margin: 20px 0; /* Ajusta el margen según sea necesario */
+}
+
+#redes-socias h2 {
+    font-size: 2.5rem; /* Tamaño de fuente */
+    color: #4F7258; /* Color verde natural */
+    margin-bottom: 40px; /* Espacio inferior */
+    text-align: center; /* Centrado */
+    
 }
